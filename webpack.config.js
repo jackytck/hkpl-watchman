@@ -19,7 +19,7 @@ const PATHS = {
   build: path.join(__dirname, 'build'),
   style: path.join(__dirname, 'src/style/main.sass'),
   template: path.join(__dirname, 'src/template/index.html'),
-  favicon: path.join(__dirname, 'src/style/favicon-32x32.png')
+  favicon: path.join(__dirname, 'src/style/favicon.ico')
 };
 
 const common = {
