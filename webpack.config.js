@@ -18,7 +18,8 @@ const PATHS = {
   src: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'build'),
   style: path.join(__dirname, 'src/style/main.sass'),
-  template: path.join(__dirname, 'src/template/index.html')
+  template: path.join(__dirname, 'src/template/index.html'),
+  favicon: path.join(__dirname, 'src/style/favicon-32x32.png')
 };
 
 const common = {
@@ -47,7 +48,8 @@ const common = {
     new HtmlWebpackPlugin({
       title: 'Alti-React',
       template: PATHS.template,
-      inject: 'body'
+      inject: 'body',
+      favicon: PATHS.favicon
     })
   ]
 };
