@@ -9,7 +9,7 @@ function BookList ({ bookList }) {
   return (
     <div>
       <ol>
-        {bookList.map(book => <li key={book}>{book}</li>)}
+        {bookList.map(book => <li key={book.title}>{book.title}</li>)}
       </ol>
     </div>
   )
