@@ -1,4 +1,7 @@
-# Work in progress...
-http://jackytck.github.io/hkpl-watchman
+https://jackytck.github.io/hkpl-watchman
 
-Check the books that I want to borrow from the Hong Kong Public Library
+Check the availabilities of books in the *Hong Kong Public Library*.
+
+1. Copy and paste list of books separated by newlines
+2. Click **Add Books**
+3. Click **Check Books**
