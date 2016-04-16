@@ -11,17 +11,14 @@ function BookListInput ({ addBooks, checkBooks }) {
   }
 
   function onClickCheckBooks () {
-    console.log('onClickCheckBooks()')
     checkBooks()
   }
 
   return (
-    <div>
+    <div className='BookListInput'>
       <textarea
-        className='form-control'
         placeholder='Copy and paste list of books (separated by EndOfLine) here.'
         rows={15}
-        cols={100}
         ref={node => { input = node }} />
       <br />
       <button

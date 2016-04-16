@@ -1,16 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import BookListItem from './book-list-item'
 
 function BookList ({ bookList }) {
-  // if (!bookList.length) {
-  //   return <div></div>
-  // }
   return (
-    <div>
-      <ol>
-        {bookList.map(book => <li key={book.title}>{book.title}</li>)}
-      </ol>
+    <div className='BookList'>
+      {bookList.map((book, index) => <BookListItem key={book.title} index={index} book={book} />)}
     </div>
   )
 }

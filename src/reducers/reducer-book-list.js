@@ -1,4 +1,4 @@
-import { ADD_BOOKS } from '../actions'
+import { ADD_BOOKS, UPDATE_BOOKS, QUERY_RESULT } from '../actions'
 
 export default (state = [], action) => {
   switch (action.type) {
@@ -8,6 +8,20 @@ export default (state = [], action) => {
         title: book
       }))
       return [ ...state, ...books ]
+    case UPDATE_BOOKS:
+      return state.map(book => {
+        if (book.title !== action.payload.title) {
+          return book
+        }
+        return Object.assign({}, book, action.payload)
+      })
+    case QUERY_RESULT:
+      return state.map(book => {
+        if (book.title !== action.payload.title) {
+          return book
+        }
+        return Object.assign({}, book, action.payload)
+      })
   }
   return state
 }

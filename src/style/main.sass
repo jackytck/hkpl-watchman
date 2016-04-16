@@ -10,14 +10,44 @@ body
 
 #container
   display: flex
-  margin: 20px
+  margin: 20px 32px 20px 32px
+  div
+    width: 100%
 
 h1
   color: white
 
-p
-  font-size: 30px
+.BookList
+  padding-bottom: 20px
+
+.BookListInput
+  textarea
+    width: 100%
+
+.BookItem
+  display: flex
+  justify-content: space-between
+  align-items: center
   color: lightgreen
 
-li
-  color: lightgreen
+.notfound
+  color: gray !important
+
+.BookItemIndex
+  min-width: 30px
+  text-align: right
+  padding-right: 10px
+
+.BookItemTitle
+  flex-grow: 8
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  padding-right: 10px
+
+.BookItemState
+  flex-grow: 1
+  min-width: 80px
+  text-align: right
+  text-transform: capitalize
+  color: lightpink
