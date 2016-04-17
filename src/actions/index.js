@@ -1,13 +1,9 @@
-import axios from 'axios'
+import { checkBook } from '../library/hkpl'
 
 const ADD_BOOKS = 'ADD_BOOKS'
 const CHECK_BOOKS = 'CHECK_BOOKS'
 const UPDATE_BOOKS = 'UPDATE_BOOKS'
 const QUERY_RESULT = 'QUERY_RESULT'
-
-const WRAP_API_URL = 'https://wrapapi.com/use/jackytck/hkpl/query/0.0.3'
-// const WRAP_API_KEY = 'xUsJnMtBqIVhVA72EPEWY2Yo1Wc8CZH0'
-const WRAP_API_KEY = 'bT0lMSGY6mgAg4EAetiv2Lt5LL3KmB7r'
 
 function addBooks (books) {
   return {
@@ -21,15 +17,6 @@ function updateBooks (books) {
     type: UPDATE_BOOKS,
     payload: books
   }
-}
-
-function check (book) {
-  return axios.get(WRAP_API_URL, {
-    params: {
-      name: book.title,
-      wrapAPIKey: WRAP_API_KEY
-    }
-  })
 }
 
 function queryResult (book) {
@@ -65,7 +52,7 @@ function checkBooks () {
       .map(book => Object.assign(book, { state: 'querying' }))
     dispatch(updateBooks(querying))
 
-    const results = await Promise.all(querying.map(w => check(w)))
+    const results = await Promise.all(querying.map(w => checkBook(w)))
     results.forEach((query, idx) => dispatch(queryResult(Object.assign({}, querying[idx], query.data))))
 
     if (querying.length) {

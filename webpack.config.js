@@ -151,7 +151,8 @@ if(TARGET === 'build' || TARGET === 'stats') {
       // DefinePlugin replaces content "as is" so we need some
       // extra quotes for the generated code to make sense
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"production"'
+        'process.env.NODE_ENV': '"production"',
+        'process.env.WRAP_API_KEY': `'${process.env.WRAP_API_KEY}'`
 
         // You can set this to '"development"' or
         // JSON.stringify('development') for your
