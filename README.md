@@ -1,4 +1,3 @@
-### Live Demo
 https://jackytck.github.io/hkpl-watchman
 
 #### Instructions
